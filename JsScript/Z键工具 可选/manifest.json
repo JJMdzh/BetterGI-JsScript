@@ -1,0 +1,14 @@
+{
+  "manifest_version": 1,
+  "name": "选择工具",
+  "version": "1.0",
+  "description": "长按Z键选择工具号",
+  "authors": [
+    {
+      "name": "吉吉喵",
+      "links": "https://github.com/JJMdzh"
+    }
+  ],
+  "settings_ui": "settings.json",
+  "main": "main.js",
+}

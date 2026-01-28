@@ -1,0 +1,13 @@
+{
+  "manifest_version": 1,
+  "name": "领取纪行",
+  "version": "1.0",
+  "description": "兼容跳过动画，并领取纪行",
+  "authors": [
+    {
+      "name": "吉吉喵",
+      "links": "https://github.com/JJMdzh"
+    }
+  ],
+  "main": "main.js"
+}
