@@ -1,0 +1,14 @@
+{
+  "manifest_version": 1,
+  "name": "等待(默认10秒)",
+  "version": "1.0",
+  "description": "等待自定义时间",
+  "authors": [
+    {
+      "name": "吉吉喵",
+      "links": "https://github.com/JJMdzh"
+    }
+  ],
+  "settings_ui": "settings.json",
+  "main": "main.js"
+}

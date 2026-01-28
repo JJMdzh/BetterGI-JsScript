@@ -1,0 +1,14 @@
+{
+  "manifest_version": 1,
+  "name": "传送 冒险公会附近 可选",
+  "version": "1.0",
+  "description": "至各国冒险公会附近的传送点",
+  "authors": [
+    {
+      "name": "吉吉喵",
+      "links": "https://github.com/JJMdzh"
+    }
+  ],
+  "settings_ui": "settings.json",
+  "main": "main.js"
+}

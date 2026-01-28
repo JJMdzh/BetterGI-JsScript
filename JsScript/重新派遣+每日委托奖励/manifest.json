@@ -1,0 +1,14 @@
+{
+  "manifest_version": 1,
+  "name": "派遣+委托",
+  "version": "1.0",
+  "description": "重新派遣+领取每日委托奖励，需结合 寻路凯瑟琳AutoCatherine 使用",
+  "authors": [
+    {
+      "name": "吉吉喵",
+      "links": "https://github.com/JJMdzh"
+    }
+  ],
+  "settings_ui": "settings.json",
+  "main": "main.js"
+}

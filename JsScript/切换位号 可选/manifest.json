@@ -1,0 +1,14 @@
+{
+  "manifest_version": 1,
+  "name": "选择位号",
+  "version": "1.0",
+  "description": "用于切换队伍中角色",
+  "authors": [
+    {
+      "name": "吉吉喵",
+      "links": "https://github.com/JJMdzh"
+    }
+  ],
+  "settings_ui": "settings.json",
+  "main": "main.js"
+}

@@ -1,0 +1,18 @@
+[
+    {
+        "name": "direction",
+        "type": "select",
+        "label": "方向",
+        "options": [
+          "前",
+          "后",
+          "左",
+          "右"
+        ]
+    },
+    {
+        "name": "time",
+        "type": "input-text",
+        "label": "移动时间（单位：毫秒）"
+    }
+]

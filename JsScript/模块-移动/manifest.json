@@ -1,0 +1,14 @@
+{
+  "manifest_version": 1,
+  "name": "模块-移动(默认按s移动200ms)",
+  "version": "1.0",
+  "description": "wasd方向移动一段时间",
+  "authors": [
+    {
+      "name": "吉吉喵",
+      "links": "https://github.com/JJMdzh"
+    }
+  ],
+  "settings_ui": "settings.json",
+  "main": "main.js"
+}
