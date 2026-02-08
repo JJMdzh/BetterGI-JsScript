@@ -37,9 +37,12 @@ async function handleCommissions() {
         await drawAndClearRedBox(commResult, ra);
         click(commResult.x, commResult.y); // 直接点击图片坐标
         await sleep(1000);
-        click(960, 540); // 点击领取奖励
+        click(1010, 757); // 点击使用历练点
+        await sleep(1000);
+        click(1010, 757); // 点击领取奖励
         await sleep(3000);
-        click(960, 960); // 点击关闭奖励界面
+        click(1010, 757); // 点击关闭奖励界面
+        await genshin.returnMainUi();
         log.info("每日委托流程完成");
     } else {
         log.error("未识别到Commissions，跳过委托流程");
