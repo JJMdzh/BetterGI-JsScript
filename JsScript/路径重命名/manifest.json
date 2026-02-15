@@ -1,0 +1,14 @@
+{
+  "manifest_version": 1,
+"name": "路径重命名",
+  "version": "1.0",
+  "description": "给路径文件按标准自动命名+检测码，配合2.6+版本的JS背包统计采集系统使用",
+  "authors": [
+    {
+        "name": "吉吉喵",
+        "links": "https://github.com/JJMdzh"
+    }
+  ],
+  "settings_ui": "settings.json",
+  "main": "main.js"
+ }
