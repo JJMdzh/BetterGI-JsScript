@@ -293,36 +293,24 @@ async function processPathFile(pathFile, tpData, cdMaterialNames) {
       return;
     }
 
-    // 2. 读取并解析路径内容（增强版JSON修复）
+    // 2. 读取并解析路径内容
     const pathContent = safeReadTextSync(normalizedPath);
-    const fixedContent = fixJsonFormat(pathContent); // 先修复再解析
-    const pathData = JSON.parse(fixedContent);
+    const pathData = JSON.parse(pathContent);
 
-    // 无有效positions（记录异常）
-    if (!pathData?.positions || !Array.isArray(pathData.positions)) {
-      log.warn(`⚠️ ${fileName} 无有效positions，跳过`);
-      const errorContent = `[${new Date().toLocaleString()}] 异常路径记录: ${fileName} - 无有效positions`;
+    const positions = pathData.positions || [];
+
+    if (!Array.isArray(positions) || positions.length === 0) {
+      log.warn(`⚠️ ${fileName} 无有效位置数据，跳过`);
+      const errorContent = `[${new Date().toLocaleString()}] 异常路径记录: ${fileName} - 无有效位置数据`;
       await writeFile("异常路径记录.log", errorContent, true);
       return;
     }
 
-    // 3. 筛选坐标并生成检测码
-    const validTypes = ["teleport", "target", "path"];
-    const filteredPositions = pathData.positions.filter(pos => 
-      validTypes.includes(pos.type) && 
-      pos.x !== undefined && 
-      pos.y !== undefined
-    );
-    if (filteredPositions.length === 0) {
-      log.warn(`⚠️ ${fileName} 无有效坐标点，跳过`);
-      const errorContent = `[${new Date().toLocaleString()}] 异常路径记录: ${fileName} - 无有效坐标点`;
-      await writeFile("异常路径记录.log", errorContent, true);
-      return;
-    }
-    const contentCode = generateContentCode(filteredPositions);
+    // 3. 生成检测码
+    const contentCode = generateContentCode(positions);
 
     // 4. 匹配最近的传送点（使用tranPosition计算）
-    const teleportPos = filteredPositions.find(pos => pos.type === "teleport");
+    const teleportPos = positions.find(pos => pos.type === "teleport");
     if (!teleportPos) {
       log.warn(`⚠️ ${fileName} 无teleport点，跳过`);
       const errorContent = `[${new Date().toLocaleString()}] 异常路径记录: ${fileName} - 无teleport点`;
